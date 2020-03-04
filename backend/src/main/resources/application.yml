@@ -1,0 +1,27 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: escola-adventista-jetapps
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost/adventista
+    username: postgres
+    password: ifsc
+  jpa:
+    database: POSTGRESQL
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        ejb.naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        jdbc.lob.non_contextual_creation: true
+        hbm2ddl:
+          auto: update
+  jwt:
+    header: Authorization
+    secret: chave_Secret
+    expiration: 604800

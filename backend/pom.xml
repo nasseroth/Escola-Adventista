@@ -9,7 +9,7 @@
 	<version>2.0.1-SNAPSHOT</version>
 
 	<name>projeto-spring-jetapps</name>
-	<description>Escola adventista</description>
+	<description>Exemplo Simples de Projeto Spring RESTful</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
