@@ -1,0 +1,26 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title"><a routerLink="/"><img src="../../../../assets/img/adventista.png" alt="logo" width="50px"></a></span>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Adventista</span>
+    <nav class="mdl-navigation" *ngIf="this.shared.isLogged()">
+      <div class="drawer-separator"></div>
+      <a class="mdl-navigation__link" routerLink="home" (click)="toggleSideMenu()"><i class="material-icons">school</i> Home</a>
+      <div class="drawer-separator"></div>
+      <span class="mdl-navigation__link menu_label"><i class="material-icons">add_circle</i> Cadastros</span>
+      <a class="mdl-navigation__link" routerLink="classe" (click)="toggleSideMenu()"><i class="material-icons">view_module</i> Classe</a>
+      <a class="mdl-navigation__link" routerLink="aluno" (click)="toggleSideMenu()"><i class="material-icons">school</i> Aluno</a>
+      <a class="mdl-navigation__link" routerLink="usuario" (click)="toggleSideMenu()"><i class="material-icons">person</i> Usuario</a>
+      <div class="drawer-separator"></div>
+      <a class="mdl-navigation__link" routerLink="carrinho" (click)="signOut()"><i class="material-icons">exit_to_app</i> Sair</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>

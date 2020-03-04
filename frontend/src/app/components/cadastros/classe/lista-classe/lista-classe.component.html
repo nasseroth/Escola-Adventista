@@ -1,0 +1,38 @@
+<mat-table [dataSource]="classes" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef class="mat-column-100"> Código </mat-header-cell>
+    <mat-cell *matCellDef="let element" class="mat-column-100"> {{element.id}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="nome">
+    <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="numero">
+      <mat-header-cell *matHeaderCellDef> Número </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.numero}} </mat-cell>
+    </ng-container>
+  <ng-container matColumnDef="dataCriacao">
+    <mat-header-cell *matHeaderCellDef> Criado/Atualizado em </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.dataCriacao}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="action">
+    <mat-header-cell *matHeaderCellDef class="mat-column-100"></mat-header-cell>
+    <mat-cell *matCellDef="let element" class="mat-column-100">
+      <button mat-icon-button color="primary" [routerLink]="['../novo', element.id]">
+        <i class="fas fa-edit fa-2x"></i>
+      </button>
+      <button mat-icon-button color="warn" (click)="deletar(element.id)">
+        <i class="fas fa-trash fa-2x"></i>
+      </button>
+    </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<button mat-fab color="primary" class="md-fab md-fab-bottom-right" routerLink="../novo" id="fab">
+  <i class="material-icons">
+    add
+  </i>
+</button>
+
+

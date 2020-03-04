@@ -1,0 +1,41 @@
+.header-image {
+  background-size: cover;
+}
+
+.card-dashboard {
+  background-color: #3D9EFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fa-cart-plus, a {
+  color: #AED036;
+}
+
+.subtitle {
+  font-size: 1.4em;
+  color: #AED036;
+  font-weight: 600;
+  display: block;
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+}
+
+.title {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 15px;
+}

@@ -1,0 +1,54 @@
+<form [formGroup]="formulario">
+  <div class="mdl-grid mdl-cell--10-col">
+    <div class="mdl-cell mdl-cell--4-col">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" formControlName="nome">
+        <mat-error *ngIf="formulario.get('nome').hasError('required')">
+          Campo obrigatório
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+      <mat-form-field appearance="outline">
+        <mat-label>Sexo</mat-label>
+        <mat-select formControlName="sexo">
+          <mat-option value="MASCULINO">MASCULINO</mat-option>
+          <mat-option value="FEMININO">FEMININO</mat-option>
+        </mat-select>
+        <mat-error *ngIf="formulario.get('sexo').hasError('required')">
+            Campo obrigatório
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+      <mat-form-field appearance="outline">
+        <mat-label>Classe</mat-label>
+        <mat-select formControlName="classe">
+          <mat-option *ngIf="formulario.get('classe').value" [value]="formulario.get('classe').value">
+            {{ formulario.get('classe').value.nome }}
+          </mat-option>
+          <mat-option *ngFor="let classe of classes" [value]="classe">
+            {{ classe.nome }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <mat-form-field appearance="outline">
+          <mat-label>Codigo do Aluno</mat-label>
+          <input matInput type="text" formControlName="codigoAluno">
+          <mat-error *ngIf="formulario.get('codigoAluno').hasError('required')">
+            Campo obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+      <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="formulario.invalid">Salvar</button>&nbsp;
+      <a mat-raised-button routerLink="/aluno">Voltar</a>
+    </div>
+
+  </div>
+</form>

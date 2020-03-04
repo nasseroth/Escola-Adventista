@@ -1,0 +1,32 @@
+<form [formGroup]="formulario">
+    <div class="mdl-grid mdl-cell--3-col">
+      <h1 class="mdl-layout-title">Projeto Adventista - Login</h1>
+    </div>
+    <div class="mdl-grid mdl-cell--4-col">
+      <div class="mdl-cell mdl-cell--10-col">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="text" formControlName="email">
+          <mat-error *ngIf="formulario.get('email').hasError('required')">
+            Campo obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+      <div class="mdl-grid mdl-cell--4-col">
+        <div class="mdl-cell mdl-cell--10-col">
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input matInput type="password" formControlName="senha">
+          <mat-error *ngIf="formulario.get('senha').hasError('required')">
+            Campo obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="mdl-cell mdl-cell--12-col">
+        <button mat-raised-button color="primary" (click)="login()" [disabled]="formulario.invalid">Entrar</button>&nbsp;
+        <a mat-raised-button (click)="cancelLogin()">Cancelar</a>
+      </div>
+
+    </div>
+</form>

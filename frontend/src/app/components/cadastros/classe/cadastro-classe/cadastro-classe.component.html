@@ -1,0 +1,27 @@
+<form [formGroup]="formulario">
+  <div class="mdl-grid mdl-cell--10-col">
+    <div class="mdl-cell mdl-cell--4-col">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" formControlName="nome">
+        <mat-error *ngIf="formulario.get('nome').hasError('required')">
+          Campo obrigatório
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+      <mat-form-field appearance="outline">
+        <mat-label>Numero</mat-label>
+        <input matInput type="number" formControlName="numero">
+        <mat-error *ngIf="formulario.get('numero').hasError('required')">
+            Campo obrigatório
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col">
+      <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="formulario.invalid">Salvar</button>&nbsp;
+      <a mat-raised-button routerLink="/classe">Voltar</a>
+    </div>
+
+  </div>
+</form>
